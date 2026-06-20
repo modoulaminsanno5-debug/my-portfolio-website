@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Apply saved theme before first paint to avoid a flash of the wrong theme. -->
+    <script>
+        (function () {
+            try {
+                if (localStorage.getItem('portfolio-theme') === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }
+            } catch (e) { /* localStorage unavailable — default dark theme applies */ }
+        })();
+    </script>
+
+    <title>Modou Lamin Sanno | Data Science Portfolio</title>
+
+    <meta name="description"
+        content="Portfolio of Modou Lamin Sanno, a Data Science student at Albukhary International University specializing in Machine Learning, Data Analysis, and Data Visualization with Python, SQL and Tableau.">
+    <meta name="theme-color" content="#0A192F">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Modou Lamin Sanno | Data Science Portfolio">
+    <meta property="og:description" content="Data Science student specializing in Machine Learning, Analytics, and Data Visualization.">
+    <meta property="og:image" content="profile.png">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/png" href="profile.png">
+
+    <!-- Preconnect for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts: Space Grotesk (display), Inter (body), IBM Plex Mono (data/labels) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Modou Lamin Sanno",
+      "jobTitle": "Data Science Student",
+      "email": "mailto:modoulaminsanno5@gmail.com",
+      "sameAs": ["https://github.com/modoulaminsanno5-debug"],
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Albukhary International University"
+      }
+    }
+    </script>
+
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ==========================
+         NAVBAR
+    =========================== -->
+
+    <nav class="navbar navbar-expand-lg fixed-top ds-nav">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="#home">
+                <span>MLS</span>
+            </a>
+
+            <button class="theme-toggle d-lg-none order-2"
+                id="themeToggleMobile"
+                type="button"
+                aria-label="Toggle dark and light theme"
+                aria-pressed="false">
+                <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+                <i class="bi bi-sun-fill" aria-hidden="true"></i>
+            </button>
+
+            <button class="navbar-toggler order-3"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Toggle navigation menu">
+                <i class="bi bi-list" aria-hidden="true"></i>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="menu">
+
+                <a class="nav-link" href="#home">Home</a>
+                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#skills">Skills</a>
+                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#certifications">Certificates</a>
+                <a class="nav-link" href="#experience">Experience</a>
+                <a class="nav-link" href="#contact">Contact</a>
+
+                <button class="theme-toggle d-none d-lg-inline-flex"
+                    id="themeToggle"
+                    type="button"
+                    aria-label="Toggle dark and light theme"
+                    aria-pressed="false">
+                    <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+                    <i class="bi bi-sun-fill" aria-hidden="true"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <main id="main-content">
+
+        <!-- ==========================
+             HERO
+        =========================== -->
+
+        <section id="home" class="hero">
+
+            <div class="grid-backdrop" aria-hidden="true"></div>
+            <div class="hero-glow glow-1" aria-hidden="true"></div>
+            <div class="hero-glow glow-2" aria-hidden="true"></div>
+
+            <div class="container">
+
+                <div class="row align-items-center min-vh-100 gy-5">
+
+                    <!-- LEFT -->
+
+                    <div class="col-lg-7 reveal">
+
+                        <div class="status-pill">
+                            <i class="bi bi-mortarboard-fill" aria-hidden="true"></i>
+                            Aspiring Data Scientist
+                        </div>
+
+                        <h1>
+                            Modou Lamin
+                            <span>Sanno</span>
+                        </h1>
+
+                        <h2>
+                            <span id="typing" aria-live="polite"></span><span class="typing-cursor" aria-hidden="true">&nbsp;</span>
+                        </h2>
+
+                        <p class="hero-text">
+                            Transforming data into meaningful insights and building intelligent solutions
+                            through Data Science, Machine Learning, and Analytics. Passionate about solving
+                            real-world problems with data-driven approaches.
+                        </p>
+
+                        <div class="hero-buttons">
+
+                            <a href="#projects" class="btn primary-btn">
+                                <i class="bi bi-folder2-open" aria-hidden="true"></i>
+                                View Projects
+                            </a>
+
+                            <a href="#contact" class="btn secondary-btn">
+                                <i class="bi bi-chat-dots" aria-hidden="true"></i>
+                                Contact Me
+                            </a>
+
+                            <!-- TODO: add your real CV file at assets/cv/Modou_Lamin_Sanno_CV.pdf -->
+                            <a href="assets/cv/Modou_Lamin_Sanno_CV.pdf" class="btn ghost-btn" download>
+                                <i class="bi bi-download" aria-hidden="true"></i>
+                                Download CV
+                            </a>
+
+                        </div>
+
+                        <div class="social-links">
+
+                            <a href="https://github.com/modoulaminsanno5-debug" aria-label="GitHub profile" target="_blank" rel="noopener">
+                                <i class="bi bi-github" aria-hidden="true"></i>
+                            </a>
+
+                            <!-- TODO: replace # with your real LinkedIn profile URL -->
+                            <a href="#" aria-label="LinkedIn profile (coming soon)">
+                                <i class="bi bi-linkedin" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="mailto:modoulaminsanno5@gmail.com" aria-label="Send an email">
+                                <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT -->
+
+                    <div class="col-lg-5 reveal">
+
+                        <div class="profile-card">
+
+                            <div class="avatar-wrapper">
+                                <img src="profile.png" alt="Portrait of Modou Lamin Sanno" class="profile-image" loading="eager">
+                            </div>
+
+                            <div class="profile-info">
+                                <h3>Data Science Student</h3>
+                                <p>Machine Learning &middot; Analytics &middot; Visualization</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="scroll-cue" aria-hidden="true">
+                SCROLL
+                <i class="bi bi-chevron-down"></i>
+            </div>
+
+        </section>
+
+        <!-- ==========================
+             STATISTICS
+        =========================== -->
+
+        <section class="stats-section" aria-label="Quick statistics">
+
+            <div class="container">
+
+                <div class="row g-4">
+
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card reveal">
+                            <h3 data-target="5">0+</h3>
+                            <p>Projects</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card reveal">
+                            <h3 data-target="10">0+</h3>
+                            <p>Technologies</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card reveal">
+                            <h3 data-target="3">0+</h3>
+                            <p>Certificates</p>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <div class="stat-card reveal">
+                            <h3 data-target="100">0+</h3>
+                            <p>Hours of Learning</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+             ABOUT
+        =========================== -->
+
+        <section id="about" class="section">
+
+            <div class="container">
+
+                <div class="section-title reveal">
+                    <span>About Me</span>
+                    <h2>My Data Science Journey</h2>
+                </div>
+
+                <div class="about-grid">
+
+                    <div class="about-card reveal">
+
+                        <p>
+                            I am a passionate Data Science student at Albukhary International University with a
+                            strong interest in Machine Learning, Data Analytics, and Intelligent Systems.
+                        </p>
+
+                        <p>
+                            I enjoy exploring data, uncovering meaningful insights, and developing solutions that
+                            address real-world challenges through data-driven decision-making.
+                        </p>
+
+                        <p>
+                            My academic journey has equipped me with skills in programming, data visualization,
+                            analytical thinking, and problem-solving, while I continue learning emerging
+                            technologies in Artificial Intelligence and Data Science.
+                        </p>
+
+                        <p>
+                            My goal is to build a career as a Data Scientist and contribute to projects that
+                            create real impact through the intelligent use of data.
+                        </p>
+
+                    </div>
+
+                    <div class="education-card reveal">
+
+                        <h3>Bachelor of Computer Science</h3>
+                        <p class="edu-spec">Specialization: Data Science</p>
+
+                        <div class="edu-row">
+                            <span>University</span>
+                            <span>Albukhary International University</span>
+                        </div>
+
+                        <div class="edu-row">
+                            <span>Start Date</span>
+                            <span>2024</span>
+                        </div>
+
+                        <div class="edu-row">
+                            <span>End Date</span>
+                            <span>2028</span>
+                        </div>
+
+                        <div class="edu-row">
+                            <span>Status</span>
+                            <span>Seeking Internships</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+             SKILLS
+        =========================== -->
+
+        <section id="skills" class="section dark-section">
+
+            <div class="container">
+
+                <div class="section-title reveal">
+                    <span>Skills</span>
+                    <h2>Technical Expertise</h2>
+                    <p class="section-sub">
+                        Proficiency levels below are self-assessed estimates — adjust them to reflect where you
+                        genuinely stand as you grow.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+
+                    <!-- DATA SCIENCE -->
+                    <div class="col-lg-6">
+                        <div class="skill-card reveal">
+
+                            <div class="skill-card-head">
+                                <i class="bi bi-bar-chart-fill" aria-hidden="true"></i>
+                                <h4>Data Science</h4>
+                            </div>
+
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>Data Analysis</span><span>88%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="88"></div></div>
+                            </div>
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>Data Cleaning</span><span>85%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="85"></div></div>
+                            </div>
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>Machine Learning</span><span>75%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="75"></div></div>
+                            </div>
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>Data Visualization</span><span>90%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="90"></div></div>
+                            </div>
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>Predictive Modeling</span><span>70%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="70"></div></div>
+                            </div>
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>Statistical Analysis</span><span>78%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="78"></div></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- PROGRAMMING -->
+                    <div class="col-lg-6">
+                        <div class="skill-card reveal">
+
+                            <div class="skill-card-head">
+                                <i class="bi bi-code-slash" aria-hidden="true"></i>
+                                <h4>Programming</h4>
+                            </div>
+
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>Python</span><span>90%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="90"></div></div>
+                            </div>
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>SQL</span><span>85%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="85"></div></div>
+                            </div>
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>Java</span><span>70%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="70"></div></div>
+                            </div>
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>C</span><span>60%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="60"></div></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- WEB DEV -->
+                    <div class="col-lg-6">
+                        <div class="skill-card reveal">
+
+                            <div class="skill-card-head">
+                                <i class="bi bi-window" aria-hidden="true"></i>
+                                <h4>Web Development</h4>
+                            </div>
+
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>HTML5</span><span>85%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="85"></div></div>
+                            </div>
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>CSS3</span><span>80%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="80"></div></div>
+                            </div>
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>JavaScript</span><span>75%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="75"></div></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- TOOLS -->
+                    <div class="col-lg-6">
+                        <div class="skill-card reveal">
+
+                            <div class="skill-card-head">
+                                <i class="bi bi-tools" aria-hidden="true"></i>
+                                <h4>Tools &amp; Platforms</h4>
+                            </div>
+
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>Tableau</span><span>90%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="90"></div></div>
+                            </div>
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>Power BI</span><span>80%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="80"></div></div>
+                            </div>
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>Pandas</span><span>85%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="85"></div></div>
+                            </div>
+                            <div class="skill-bar-row">
+                                <div class="skill-bar-label"><span>Git &amp; GitHub</span><span>80%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-level="80"></div></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+             PROJECTS
+        =========================== -->
+
+        <section id="projects" class="section">
+
+            <div class="container">
+
+                <div class="section-title reveal">
+                    <span>Projects</span>
+                    <h2>Featured Projects</h2>
+                </div>
+
+                <div class="row g-4">
+
+                    <!-- PROJECT 1 -->
+                    <div class="col-lg-4">
+                        <div class="project-card reveal">
+
+                            <div class="project-image">
+                                <img src="churn.png" alt="Profile illustration for the customer churn prediction project" loading="lazy">
+                            </div>
+
+                            <div class="project-content">
+
+                                <h4>Customer Churn Prediction</h4>
+
+                                <p>
+                                    Machine learning model that predicts customer churn by analyzing historical
+                                    customer data and identifying customers at risk of leaving.
+                                </p>
+
+                                <div class="tech-tags">
+                                    <span>Python</span>
+                                    <span>Pandas</span>
+                                    <span>Scikit-Learn</span>
+                                    <span>Tableau</span>
+                                </div>
+
+                                <div class="project-links">
+                                    <!-- TODO: replace # with your repo URL -->
+                                    <a href="#"><i class="bi bi-github" aria-hidden="true"></i> GitHub</a>
+                                    <!-- TODO: replace # with a live demo or notebook URL -->
+                                    <a href="#"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Demo</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- PROJECT 2 -->
+                    <div class="col-lg-4">
+                        <div class="project-card reveal">
+
+                            <div class="project-image">
+                                <img src="arcticwear.jpg" alt="ArcticWear project preview" loading="lazy">
+                            </div>
+
+                            <div class="project-content">
+
+                                <h4>ArcticWear Smart Cooling Website</h4>
+
+                                <p>
+                                    Designed and developed a responsive business website for ArcticWear, a smart
+                                    wearable cooling solution created as an entrepreneurship project.
+                                </p>
+
+                                <div class="tech-tags">
+                                    <span>HTML5</span>
+                                    <span>CSS3</span>
+                                    <span>JavaScript</span>
+                                </div>
+
+                                <div class="project-links">
+                                    <!-- TODO: add a real link, then remove the disabled-link class -->
+                                    <a href="#" class="disabled-link" aria-disabled="true"><i class="bi bi-github" aria-hidden="true"></i> Link coming soon</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- PROJECT 3 -->
+                    <div class="col-lg-4">
+                        <div class="project-card reveal">
+
+                            <div class="project-image">
+                                <img src="co2-dashboard.jpg" alt="CO₂ dashboard project preview" loading="lazy">
+                            </div>
+
+                            <div class="project-content">
+
+                                <h4>Global CO&#8322; Emissions Dashboard</h4>
+
+                                <p>
+                                    Interactive Tableau dashboard visualizing global CO&#8322; emissions from 1960
+                                    to 2012 using geographic and analytical visualizations.
+                                </p>
+
+                                <div class="tech-tags">
+                                    <span>Tableau</span>
+                                    <span>Data Visualization</span>
+                                    <span>Analytics</span>
+                                </div>
+
+                                <div class="project-links">
+                                    <!-- TODO: replace # with your Tableau Public link -->
+                                    <a href="#"><i class="bi bi-bar-chart-line" aria-hidden="true"></i> View on Tableau</a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+             DASHBOARD SHOWCASE
+        =========================== -->
+
+        <section class="section dark-section" aria-label="Featured dashboard">
+
+            <div class="container">
+
+                <div class="section-title reveal">
+                    <span>Dashboards</span>
+                    <h2>Data Visualization Spotlight</h2>
+                </div>
+
+                <div class="dashboard-card reveal">
+
+                    <img src="co2-dashboard-detail.jpg" class="dashboard-image" alt="Detailed CO₂ emissions dashboard preview" loading="lazy">
+                    <div class="dashboard-content">
+
+                        <h3>Global CO&#8322; Emissions Analysis</h3>
+
+                        <p>
+                            Tableau dashboard analyzing CO&#8322; emissions across different regions of the world
+                            from 1960&ndash;2012.
+                        </p>
+
+                        <ul>
+                            <li>Interactive data visualization</li>
+                            <li>Geographical analysis</li>
+                            <li>Trend analysis</li>
+                            <li>Business intelligence reporting</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+             CERTIFICATIONS
+        =========================== -->
+
+        <section id="certifications" class="section">
+
+            <div class="container">
+
+                <div class="section-title reveal">
+                    <span>Certificates</span>
+                    <h2>Professional Development</h2>
+                    <p class="section-sub">Click a certificate to view the full preview and download it.</p>
+                </div>
+
+                <div class="row g-4">
+
+                    <!-- CERTIFICATE 1 -->
+                    <div class="col-lg-4 col-md-6">
+                        <button type="button"
+                            class="certificate-card reveal"
+                            data-cert-trigger
+                            data-cert-title="Share Data Through the Art of Visualization"
+                            data-cert-program="Google Data Analytics Professional Certificate"
+                            data-cert-grade="Grade Achieved: 95.05%"
+                            data-cert-image="assets/certificates/cert-share-data-visualization.jpg"
+                            data-cert-download="assets/certificates/cert-share-data-visualization.jpg"
+                            data-cert-verify="https://coursera.org/verify/2RU62SKOWA5K">
+
+                            <div class="certificate-header">
+                                <i class="bi bi-award-fill" aria-hidden="true"></i>
+                                <h4>Share Data Through the Art of Visualization</h4>
+                            </div>
+
+                            <p>Google Data Analytics Professional Certificate</p>
+                            <p>Grade Achieved: <span class="grade">95.05%</span></p>
+
+                            <ul>
+                                <li>Tableau</li>
+                                <li>Dashboard Creation</li>
+                                <li>Data Storytelling</li>
+                                <li>Interactive Visualization</li>
+                            </ul>
+
+                            <span class="certificate-cta"><i class="bi bi-eye" aria-hidden="true"></i> View certificate</span>
+
+                        </button>
+                    </div>
+
+                    <!-- CERTIFICATE 2 -->
+                    <div class="col-lg-4 col-md-6">
+                        <button type="button"
+                            class="certificate-card reveal"
+                            data-cert-trigger
+                            data-cert-title="Process Data from Dirty to Clean"
+                            data-cert-program="Google Data Analytics Professional Certificate"
+                            data-cert-grade="Grade Achieved: 92.08%"
+                            data-cert-image="assets/certificates/cert-dirty-to-clean.jpg"
+                            data-cert-download="assets/certificates/cert-dirty-to-clean.jpg"
+                            data-cert-verify="https://coursera.org/verify/8H6U5VNDNF0R">
+
+                            <div class="certificate-header">
+                                <i class="bi bi-award-fill" aria-hidden="true"></i>
+                                <h4>Process Data from Dirty to Clean</h4>
+                            </div>
+
+                            <p>Google Data Analytics Professional Certificate</p>
+                            <p>Grade Achieved: <span class="grade">92.08%</span></p>
+
+                            <ul>
+                                <li>SQL</li>
+                                <li>Data Cleaning</li>
+                                <li>Data Integrity</li>
+                                <li>Data Validation</li>
+                            </ul>
+
+                            <span class="certificate-cta"><i class="bi bi-eye" aria-hidden="true"></i> View certificate</span>
+
+                        </button>
+                    </div>
+
+                    <!-- CERTIFICATE 3 -->
+                    <div class="col-lg-4 col-md-6">
+                        <button type="button"
+                            class="certificate-card reveal"
+                            data-cert-trigger
+                            data-cert-title="Introduction to Data Analysis Using Python"
+                            data-cert-program="Google Data Analytics Professional Certificate"
+                            data-cert-grade="Completed: June 20, 2026"
+                            data-cert-image="assets/certificates/cert-data-analysis-python.jpg"
+                            data-cert-download="assets/certificates/cert-data-analysis-python.jpg"
+                            data-cert-verify="https://coursera.org/verify/IWZXLV9867N0">
+
+                            <div class="certificate-header">
+                                <i class="bi bi-award-fill" aria-hidden="true"></i>
+                                <h4>Introduction to Data Analysis Using Python</h4>
+                            </div>
+
+                            <p>Google Data Analytics Professional Certificate</p>
+                            <p>Completed: <span class="grade">June 20, 2026</span></p>
+
+                            <ul>
+                                <li>Python</li>
+                                <li>Data Analysis</li>
+                                <li>Pandas</li>
+                                <li>NumPy</li>
+                            </ul>
+
+                            <span class="certificate-cta"><i class="bi bi-eye" aria-hidden="true"></i> View certificate</span>
+
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Certificate previews are real Coursera/Google certificates, verifiable via the
+                     "Verify on Coursera" link in each modal. -->
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+             EXPERIENCE / TIMELINE
+        =========================== -->
+
+        <section id="experience" class="section dark-section">
+
+            <div class="container">
+
+                <div class="section-title reveal">
+                    <span>Experience</span>
+                    <h2>My Learning Timeline</h2>
+                    <p class="section-sub">
+                        Currently building experience through coursework, personal projects, and certifications.
+                        This timeline will grow to include internships and leadership roles as they happen.
+                    </p>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <h4>Started University</h4>
+                            <p>Began Bachelor of Computer Science (Data Science) at Albukhary International University.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-year">2025</div>
+                        <div class="timeline-content">
+                            <h4>Foundation Development</h4>
+                            <p>Built foundational skills in Python, Java, SQL, Data Analysis, and Data Visualization.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-year">2026</div>
+                        <div class="timeline-content">
+                            <h4>Project Development</h4>
+                            <p>Developed Machine Learning projects, Tableau dashboards, and web development projects.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-year">2027</div>
+                        <div class="timeline-content">
+                            <h4>Advanced Data Science</h4>
+                            <p>Focus on predictive analytics, machine learning, and portfolio development.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-year">2028</div>
+                        <div class="timeline-content">
+                            <h4>Expected Graduation</h4>
+                            <p>Complete Bachelor of Computer Science (Data Science) and pursue a professional Data Science career.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================
+             CONTACT
+        =========================== -->
+
+        <section id="contact" class="section">
+
+            <div class="container">
+
+                <div class="section-title reveal">
+                    <span>Contact</span>
+                    <h2>Let's Connect</h2>
+                </div>
+
+                <div class="row g-4">
+
+                    <!-- CONTACT INFO -->
+                    <div class="col-lg-5">
+                        <div class="contact-info reveal">
+
+                            <h4>Get In Touch</h4>
+
+                            <div class="contact-row">
+                                <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                                <a href="mailto:modoulaminsanno5@gmail.com">modoulaminsanno5@gmail.com</a>
+                            </div>
+
+                            <div class="contact-row">
+                                <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                                <a href="https://wa.me/601127465362" target="_blank" rel="noopener">+60 11-2746 5362</a>
+                            </div>
+
+                            <div class="contact-row">
+                                <i class="bi bi-github" aria-hidden="true"></i>
+                                <a href="https://github.com/modoulaminsanno5-debug" target="_blank" rel="noopener">github.com/modoulaminsanno5-debug</a>
+                            </div>
+
+                            <div class="contact-row">
+                                <i class="bi bi-linkedin" aria-hidden="true"></i>
+                                <!-- TODO: replace # with your real LinkedIn profile URL -->
+                                <a href="#">LinkedIn (add your profile URL)</a>
+                            </div>
+
+                            <div class="contact-row">
+                                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                                <span>Malaysia</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- CONTACT FORM -->
+                    <div class="col-lg-7">
+                        <form class="contact-form reveal" id="contactForm" novalidate>
+
+                            <label for="nameField" class="form-label">Your name</label>
+                            <input type="text" id="nameField" class="form-control mb-1" placeholder="Jane Doe" required>
+                            <p class="form-error" id="nameError">Please enter your name.</p>
+
+                            <label for="emailField" class="form-label">Your email</label>
+                            <input type="email" id="emailField" class="form-control mb-1" placeholder="jane@example.com" required>
+                            <p class="form-error" id="emailError">Please enter a valid email address.</p>
+
+                            <label for="messageField" class="form-label">Your message</label>
+                            <textarea id="messageField" rows="5" class="form-control mb-1" placeholder="Tell me a bit about the opportunity or project..." required></textarea>
+                            <p class="form-error" id="messageError">Please enter a message.</p>
+
+                            <button type="submit" class="btn primary-btn w-100 mt-3">
+                                <i class="bi bi-send" aria-hidden="true"></i>
+                                Send Message
+                            </button>
+
+                            <p id="formMessage" class="mt-3" aria-live="polite"></p>
+
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ==========================
+         FOOTER
+    =========================== -->
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="footer-year"></span> Modou Lamin Sanno. All rights reserved.</p>
+            <p>Built with passion for Data Science, Machine Learning, Analytics, and Continuous Learning.</p>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button id="topBtn" aria-label="Back to top">
+        <i class="bi bi-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- CERTIFICATE MODAL -->
+    <div class="cert-modal-overlay" id="certModalOverlay" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
+        <div class="cert-modal">
+
+            <button type="button" class="cert-modal-close" id="certModalClose" aria-label="Close certificate preview">
+                <i class="bi bi-x-lg" aria-hidden="true"></i>
+            </button>
+
+            <h3 id="certModalTitle"></h3>
+            <p id="certModalProgram"></p>
+            <p id="certModalGrade"></p>
+
+            <img id="certModalImage" src="" alt="Certificate preview">
+
+            <div class="cert-modal-actions">
+                <a href="#" id="certModalDownload" class="btn secondary-btn" download>
+                    <i class="bi bi-download" aria-hidden="true"></i>
+                    Download
+                </a>
+                <a href="#" id="certModalVerify" class="btn ghost-btn" target="_blank" rel="noopener">
+                    <i class="bi bi-patch-check" aria-hidden="true"></i>
+                    Verify on Coursera
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
